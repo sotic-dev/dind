@@ -5,7 +5,7 @@ RUN apk update && \
     --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
     --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \   
             git \
-    		php-cli \
+    		php \
             php7-mcrypt \
             php7-mbstring \
             php7 \
