@@ -1,18 +1,21 @@
 FROM docker:1.10.3-dind
 
 RUN apk update && \
-    apk add --update \
-    --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
-    --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \   
-            git \
-    		php \
-            php7-mcrypt \
-            php7-mbstring \
-            php7 \
+    apk add git \
+    		php5 \    
             openssl-dev \
     		bash \
     		python \
-    		py-pip && \
-    rm -rf /var/cache/apk/* 
+    		py-pip 
+
+RUN   apk add --update \
+    --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
+    --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \   
+     php7-mcrypt \
+            php7-mbstring \
+            php7 
+
+
+RUN   rm -rf /var/cache/apk/* 
 
 RUN pip install awscli
