@@ -1,4 +1,4 @@
-FROM docker:1.9.1-dind
+FROM docker:1.10.3-dind
 
 RUN apk update && \
     apk add git \
